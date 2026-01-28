@@ -27,6 +27,32 @@ export const Colors = {
   },
 };
 
+export const CalculatorColors = {
+  background: '#000000',
+  displayText: '#FFFFFF',
+  expressionText: '#A0A0A0',
+  previewText: '#808080',
+  numberButton: '#333333',
+  functionButton: '#A5A5A5',
+  operatorButton: '#FF9500',
+  numberText: '#FFFFFF',
+  functionText: '#000000',
+  operatorText: '#FFFFFF',
+  operatorButtonActive: '#FFFFFF',
+  operatorTextActive: '#FF9500',
+};
+
+export const CalculatorSizes = {
+  buttonSpacing: 12,
+  displayPadding: 20,
+  fontSize: {
+    display: 80,
+    expression: 24,
+    preview: 40,
+    button: 34,
+  },
+};
+
 export const Fonts = Platform.select({
   ios: {
     /** iOS `UIFontDescriptorSystemDesignDefault` */
