@@ -1,10 +1,10 @@
-import React from 'react';
-import { Pressable, Text, StyleSheet, Dimensions } from 'react-native';
-import * as Haptics from 'expo-haptics';
-import { ButtonVariant } from '@/types/calculator';
-import { CalculatorColors, CalculatorSizes } from '@/constants/theme';
+import { CalculatorColors, CalculatorSizes } from "@/constants/theme";
+import { ButtonVariant } from "@/types/calculator";
+import * as Haptics from "expo-haptics";
+import React from "react";
+import { Dimensions, Pressable, StyleSheet, Text } from "react-native";
 
-const { width } = Dimensions.get('window');
+const { width } = Dimensions.get("window");
 const BUTTON_SIZE = (width - CalculatorSizes.buttonSpacing * 5) / 4;
 
 interface CalculatorButtonProps {
@@ -22,35 +22,35 @@ export const CalculatorButton: React.FC<CalculatorButtonProps> = ({
   wide = false,
   isActive = false,
 }) => {
-  const handlePress = async () => {
-    await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
+  const handlePress = () => {
+    Haptics.selectionAsync();
     onPress();
   };
 
   const getBackgroundColor = () => {
-    if (variant === 'operator' && isActive) {
+    if (variant === "operator" && isActive) {
       return CalculatorColors.operatorButtonActive;
     }
     switch (variant) {
-      case 'number':
+      case "number":
         return CalculatorColors.numberButton;
-      case 'operator':
+      case "operator":
         return CalculatorColors.operatorButton;
-      case 'function':
+      case "function":
         return CalculatorColors.functionButton;
     }
   };
 
   const getTextColor = () => {
-    if (variant === 'operator' && isActive) {
+    if (variant === "operator" && isActive) {
       return CalculatorColors.operatorTextActive;
     }
     switch (variant) {
-      case 'number':
+      case "number":
         return CalculatorColors.numberText;
-      case 'operator':
+      case "operator":
         return CalculatorColors.operatorText;
-      case 'function':
+      case "function":
         return CalculatorColors.functionText;
     }
   };
@@ -62,7 +62,9 @@ export const CalculatorButton: React.FC<CalculatorButtonProps> = ({
         styles.button,
         {
           backgroundColor: getBackgroundColor(),
-          width: wide ? BUTTON_SIZE * 2 + CalculatorSizes.buttonSpacing : BUTTON_SIZE,
+          width: wide
+            ? BUTTON_SIZE * 2 + CalculatorSizes.buttonSpacing
+            : BUTTON_SIZE,
           opacity: pressed ? 0.7 : 1,
         },
         wide && styles.wideButton,
@@ -77,14 +79,14 @@ const styles = StyleSheet.create({
   button: {
     height: BUTTON_SIZE,
     borderRadius: BUTTON_SIZE / 2,
-    justifyContent: 'center',
-    alignItems: 'center',
+    justifyContent: "center",
+    alignItems: "center",
   },
   wideButton: {
-    alignItems: 'center',
+    alignItems: "center",
   },
   text: {
     fontSize: CalculatorSizes.fontSize.button,
-    fontWeight: '500',
+    fontWeight: "500",
   },
 });
