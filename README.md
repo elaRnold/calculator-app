@@ -1,50 +1,77 @@
-# Welcome to your Expo app 👋
+# 🧮 Calculator App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Calculadora estilo iOS construida con React Native y Expo. Incluye operaciones básicas, vista previa de resultados en tiempo real, retroalimentación háptica y más. Basada en el curso de Fernando Herrera.
 
-## Get started
+## 📱 Preview
 
-1. Install dependencies
+<p align="center">
+  <img src="public/img/img1.jpeg" width="200" />
+  <img src="public/img/img2.jpeg" width="200" />
+  <img src="public/img/img3.jpeg" width="200" />
+</p>
 
-   ```bash
-   npm install
-   ```
+## ✨ Características
 
-2. Start the app
+- **Operaciones básicas**: Suma, resta, multiplicación y división
+- **Vista previa en tiempo real**: Ve el resultado mientras escribes la operación
+- **Cambio de signo (+/-)**: Convierte números positivos a negativos y viceversa
+- **Soporte decimal**: Trabaja con números decimales
+- **Borrar (DEL)**: Elimina el último dígito ingresado
+- **Limpiar (C)**: Reinicia la calculadora
+- **Límite de dígitos**: Máximo 9 dígitos por número
+- **Validación**: Previene división por cero
+- **Copiar resultado**: Toca el display para copiar al portapapeles
+- **Retroalimentación háptica**: Vibración al presionar botones
+- **Formato de números**: Separadores de miles para mejor legibilidad
 
-   ```bash
-   npx expo start
-   ```
+## 🛠️ Tecnologías
 
-In the output, you'll find options to open the app in a
+- **React Native** 0.81
+- **Expo** 54
+- **TypeScript**
+- **expo-router** - Navegación basada en archivos
+- **expo-haptics** - Retroalimentación háptica
+- **expo-clipboard** - Copiar al portapapeles
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
+## 🚀 Instalación
 
 ```bash
-npm run reset-project
+# Clonar el repositorio
+git clone <url-del-repositorio>
+
+# Entrar al directorio
+cd calculator-app
+
+# Instalar dependencias
+pnpm install
+
+# Iniciar la aplicación
+pnpm start
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Escanea el código QR con Expo Go (Android) o la cámara (iOS) para ver la app en tu dispositivo.
 
-## Learn more
+## 📁 Estructura del Proyecto
 
-To learn more about developing your project with Expo, look at the following resources:
+```
+calculator-app/
+├── app/
+│   ├── _layout.tsx        # Layout principal
+│   └── index.tsx          # Pantalla de la calculadora
+├── components/calculator/
+│   ├── CalculatorButton.tsx
+│   ├── CalculatorDisplay.tsx
+│   ├── CalculatorKeypad.tsx
+│   └── DonationModal.tsx
+├── hooks/
+│   └── useCalculator.ts   # Lógica de la calculadora
+├── constants/
+│   └── theme.ts           # Colores y estilos
+├── types/
+│   └── calculator.ts      # Tipos TypeScript
+└── public/img/            # Screenshots
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## 📄 Licencia
 
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+MIT
